@@ -1,7 +1,7 @@
 package com.company;
 
 public class Files {
-    String SEPARATOR;
-    String ruta;
-    String nombre;
+    public String SEPARATOR;
+    public String ruta;
+    public String nombre;
 }

@@ -19,6 +19,10 @@ public class Main {
         File fileEquipo = new File(file.ruta);
         FileWriter writeFile = new FileWriter(file.ruta, true);
 
+        equipo.nombre = "Barcelona";
+        equipo.siglas = "FCB";
+        equipo.ciudad = "Catalunya";
+
         writeFile.write();
         writeFile.close();
 
