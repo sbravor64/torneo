@@ -1,7 +1,7 @@
 package com.company;
 
 import com.company.model.Equipo;
-
+import com.company.model.Participante;
 import java.io.*;
 
 public class Main {
@@ -10,19 +10,19 @@ public class Main {
 
         Files file = new Files();
         Equipo equipo = new Equipo();
+        Participante participante = new Participante();
+
 
         file.ruta="equipo";
         file.SEPARATOR=";";
 
-        File Equipo = new File(file.ruta);
+        File fileEquipo = new File(file.ruta);
         FileWriter writeFile = new FileWriter(file.ruta, true);
 
-
-        equipo.
         writeFile.write();
         writeFile.close();
 
-        BufferedWriter ficherosalida = new BufferedWriter(escribir);
+        BufferedWriter ficherosalida = new BufferedWriter(writeFile);
 
         //
 
