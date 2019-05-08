@@ -1,31 +1,33 @@
 package com.company;
 
+import com.company.model.Equipo;
+
 import java.io.*;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        Files equipo = new Files();
+        Files file = new Files();
+        Equipo equipo = new Equipo();
 
-        equipo.ruta="equipo";
-        equipo.SEPARATOR=";";
+        file.ruta="equipo";
+        file.SEPARATOR=";";
 
-        File Equipo = new File(equipo.ruta);
-        FileWriter escribir = new FileWriter(equipo.ruta, true);
+        File Equipo = new File(file.ruta);
+        FileWriter writeFile = new FileWriter(file.ruta, true);
 
-        escribir.write("hola");
-        escribir.close();
+
+        equipo.
+        writeFile.write();
+        writeFile.close();
 
         BufferedWriter ficherosalida = new BufferedWriter(escribir);
 
-
-
         //
-        Files participantes = new Files();
 
-        participantes.ruta="equipo";
-        participantes.SEPARATOR=";";
+        file.ruta="equipo";
+        file.SEPARATOR=";";
 
     }
 }
