@@ -16,7 +16,7 @@ public class MenuEquipo {
         int opcion = sc.nextInt();
         switch (opcion) {
             case 1:
-                System.out.println("holaequipo1");
+                System.out.println("holaequip1");
                 break;
             case 2:
                 System.out.println("holae2");
