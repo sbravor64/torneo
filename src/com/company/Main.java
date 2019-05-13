@@ -17,24 +17,24 @@ public class Main {
         file.SEPARATOR=";";
 
         File fileEquipo = new File(file.ruta);
-        FileWriter writeFile = new FileWriter(file.ruta, true);
 
         equipo.nombre = "Barcelona";
         equipo.siglas = "FCB";
         equipo.ciudad = "Catalunya";
 
-        String lista[] = new String[2];
+        BufferedWriter ficherosalida = new BufferedWriter(new FileWriter(fileEquipo, true));
 
+        ficherosalida.write(equipo.nombre + file.SEPARATOR + equipo.ciudad + file.SEPARATOR +equipo.siglas);
+        ficherosalida.close();
 
-        writeFile.write();
-        writeFile.close();
-
-        BufferedWriter ficherosalida = new BufferedWriter(writeFile);
 
         //
+        equipo.nombre = "Real Madrid";
+        equipo.siglas = "RMCF";
+        equipo.ciudad = "Madrid";
 
-        file.ruta="equipo";
-        file.SEPARATOR=";";
+        ficherosalida.write(equipo.nombre + file.SEPARATOR + equipo.ciudad + file.SEPARATOR +equipo.siglas);
+        ficherosalida.close();
 
     }
 }
