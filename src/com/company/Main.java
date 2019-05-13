@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.model.Equipo;
+import com.company.model.Files;
 import com.company.model.Participante;
 import java.io.*;
 
