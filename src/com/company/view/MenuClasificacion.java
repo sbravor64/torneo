@@ -6,12 +6,10 @@ public class MenuClasificacion {
     void show() {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("1. Equipo");
-        System.out.println("    1. Inscribir");
-        System.out.println("    2. Modificar");
-        System.out.println("    3. Borrar");
-        System.out.println("    4. Listar");
-        System.out.println("    5. Salir");
+        System.out.println("4. Clasificacion");
+        System.out.println("    1. Por equipos");
+        System.out.println("    2. Por participantes");
+        System.out.println("    3. Salir");
 
         int opcion = sc.nextInt();
         switch (opcion) {
@@ -22,12 +20,6 @@ public class MenuClasificacion {
                 System.out.println("holae2");
                 break;
             case 3:
-                System.out.println("holae3");
-                break;
-            case 4:
-                System.out.println("holae4");
-                break;
-            case 5:
                 break;
         }
     };

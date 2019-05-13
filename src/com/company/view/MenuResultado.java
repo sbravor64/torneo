@@ -6,7 +6,7 @@ public class MenuResultado {
     void show() {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("1. Resultado");
+        System.out.println("3. Resultado");
         System.out.println("    1. Introducir resultado");
         System.out.println("    2. Salir");
 
