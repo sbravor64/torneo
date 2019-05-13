@@ -7,6 +7,10 @@ public class MenuPrincipal {
 
         Scanner sc = new Scanner(System.in);
         MenuEquipo menuEquipo = new MenuEquipo();
+        MenuParticipantes menuParticipantes = new MenuParticipantes();
+        MenuResultado menuResultado = new MenuResultado();
+        MenuClasificacion menuClasificacion = new MenuClasificacion();
+
         System.out.println("TORNEO PLUS");
         System.out.println("  1. Equipos");
         System.out.println("  2. Participantes");
@@ -21,13 +25,13 @@ public class MenuPrincipal {
                 menuEquipo.show();
                 break;
             case 2:
-                System.out.println("hola");
+                menuParticipantes.show();
                 break;
             case 3:
-                System.out.println("hola");
+                menuResultado.show();
                 break;
             case 4:
-                System.out.println("hola");
+                menuClasificacion.show();
                 break;
             case 5:
                 break;
