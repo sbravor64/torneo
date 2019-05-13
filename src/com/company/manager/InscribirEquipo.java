@@ -6,9 +6,11 @@ import java.util.Scanner;
 public class InscribirEquipo {
     Scanner teclado = new Scanner(System.in);
 
-    public String nombre=teclado.nextLine();
-    public String ciudad=teclado.nextLine();
-    public String  siglas=teclado.nextLine();
+    void inscribir() {
+        String nombre=teclado.nextLine();
+        String ciudad=teclado.nextLine();
+        String  siglas=teclado.nextLine();
+    }
 
 
 
