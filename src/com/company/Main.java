@@ -23,6 +23,9 @@ public class Main {
         equipo.siglas = "FCB";
         equipo.ciudad = "Catalunya";
 
+        String lista[] = new String[2];
+
+
         writeFile.write();
         writeFile.close();
 
