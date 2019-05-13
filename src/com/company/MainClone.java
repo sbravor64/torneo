@@ -2,6 +2,8 @@ package com.company;
 
 import com.company.model.Equipo;
 import com.company.model.Participante;
+import com.company.model.Files;
+
 
 import java.io.BufferedWriter;
 import java.io.File;

@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.manager.InscribirEquipo;
 import com.company.model.Equipo;
 import com.company.model.Files;
 import com.company.model.Participante;
@@ -10,12 +11,13 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         Files file = new Files();
-        Equipo equipo = new Equipo();
+        InscribirEquipo equipo = new InscribirEquipo();
 
         file.ruta="equipo";
         file.SEPARATOR=";";
 
         File fileEquipo = new File(file.ruta);
+        fileEquipo.delete();
 
         BufferedWriter ficherosalida = new BufferedWriter(new FileWriter(fileEquipo, true));
 
