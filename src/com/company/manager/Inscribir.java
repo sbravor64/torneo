@@ -6,21 +6,23 @@ import javax.security.sasl.SaslClient;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
-public class InscribirEquipo {
-    Files file = new Files();
+public class Inscribir {
+    Files files = new Files();
     Scanner teclado = new Scanner(System.in);
 
-    public void inscribir() {
+    public void inscribir(String ruta) throws IOException {
         String nombre=teclado.nextLine();
         String ciudad=teclado.nextLine();
         String  siglas=teclado.nextLine();
 
-        BufferedWriter ficherosalida = new BufferedWriter(new FileWriter("equipo");
+        FileWriter fw=new FileWriter(ruta);
+        BufferedWriter bw = new BufferedWriter(fw);
 
-        ficherosalida.write(nombre + file.SEPARATOR + ciudad + file.SEPARATOR + siglas);
-        ficherosalida.close();
+        bw.write(nombre + files.SEPARATOR + ciudad + files.SEPARATOR + siglas);
+        bw.close();
 
     }
 

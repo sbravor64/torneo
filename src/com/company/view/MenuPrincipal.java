@@ -3,8 +3,8 @@ package com.company.view;
 import java.util.Scanner;
 
 public class MenuPrincipal {
-    public static void main(String[] args) {
 
+    public void show(){
         Scanner sc = new Scanner(System.in);
         MenuEquipo menuEquipo = new MenuEquipo();
         MenuParticipantes menuParticipantes = new MenuParticipantes();
