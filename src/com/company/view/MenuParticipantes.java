@@ -1,16 +1,17 @@
 package com.company.view;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import com.company.manager.*;
 
 public class MenuParticipantes {
-    void show() {
+    void show() throws IOException {
         Scanner sc = new Scanner(System.in);
-        InscribirParticipantes inscribirParticipantes = new InscribirParticipantes();
-        ModificarParticipantes modificarParticipantes = new ModificarParticipantes();
-        BorrarParticipantes borrarParticipantes = new BorrarParticipantes();
-        ListarParticipantes listarParticipantes = new ListarParticipantes();
+        Inscribir inscribir = new Inscribir();
+        Modificar modificar = new Modificar();
+        Borrar borrar = new Borrar();
+        Listar listar = new Listar();
 
 
         System.out.println("1. Participantes");
@@ -23,16 +24,16 @@ public class MenuParticipantes {
         int opcion = sc.nextInt();
         switch (opcion) {
             case 1:
-                inscribirParticipantes.inscribir();
+                inscribir.inscribirParticipantes("participantes");
                 break;
             case 2:
-                modificarParticipantes.modificar();
+                modificar.modificar();
                 break;
             case 3:
-                borrarParticipantes.borrar();
+                borrar.borrar();
                 break;
             case 4:
-                listarParticipantes.listar();
+                listar.listar();
                 break;
             case 5:
                 break;

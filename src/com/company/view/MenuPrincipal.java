@@ -1,10 +1,11 @@
 package com.company.view;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class MenuPrincipal {
 
-    public void show(){
+    public void show() throws IOException {
         Scanner sc = new Scanner(System.in);
         MenuEquipo menuEquipo = new MenuEquipo();
         MenuParticipantes menuParticipantes = new MenuParticipantes();

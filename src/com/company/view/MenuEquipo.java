@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.util.Scanner;
 import com.company.manager.*;
 
-
-
 public class MenuEquipo {
     void show() throws IOException {
         Scanner sc = new Scanner(System.in);
@@ -25,7 +23,7 @@ public class MenuEquipo {
         int opcion = sc.nextInt();
         switch (opcion) {
             case 1:
-                inscribir.inscribir("equipo");
+                inscribir.inscribirEquipo();
                 break;
             case 2:
                 modificar.modificar();

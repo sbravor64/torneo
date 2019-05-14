@@ -10,10 +10,6 @@ public class Main {
     public static void main(String[] args) throws IOException {
         MenuPrincipal menuPrincipal = new MenuPrincipal();
         menuPrincipal.show();
-        Files crearFile = new Files();
-
-        crearFile.crearFicheros("equipo");
-
 
     }
 }
