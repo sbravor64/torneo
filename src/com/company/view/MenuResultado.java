@@ -18,5 +18,5 @@ public class MenuResultado {
             case 2:
                 break;
         }
-    };
+    }
 }

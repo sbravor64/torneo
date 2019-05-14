@@ -1,10 +1,7 @@
 package com.company.view;
 
 import java.util.Scanner;
-import com.company.manager.InscribirEquipo;
-import com.company.manager.ModificarEquipo;
-import com.company.manager.BorrarEquipo;
-import com.company.manager.ListarEquipo;
+import com.company.manager.*;
 
 
 
@@ -41,5 +38,5 @@ public class MenuEquipo {
             case 5:
                 break;
         }
-    };
+    }
 }
