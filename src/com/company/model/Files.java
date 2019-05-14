@@ -6,7 +6,7 @@ import java.io.File;
     public String SEPARATOR;
     public String nombre;
 
-    void crearFicheros(String ruta){
+    public void crearFicheros(String ruta){
         File file = new File(ruta);
     }
 }

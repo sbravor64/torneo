@@ -17,7 +17,7 @@ public class InscribirEquipo {
         String ciudad=teclado.nextLine();
         String  siglas=teclado.nextLine();
 
-        BufferedWriter ficherosalida = new BufferedWriter(("equipo", true));
+        BufferedWriter ficherosalida = new BufferedWriter(new FileWriter("equipo");
 
         ficherosalida.write(nombre + file.SEPARATOR + ciudad + file.SEPARATOR + siglas);
         ficherosalida.close();
