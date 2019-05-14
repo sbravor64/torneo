@@ -1,7 +1,12 @@
 package com.company.model;
 
-public class Files {
+import java.io.File;
+
+ public class Files {
     public String SEPARATOR;
-    public String ruta;
     public String nombre;
+
+    void crearFicheros(String ruta){
+        File file = new File(ruta);
+    }
 }
