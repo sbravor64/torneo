@@ -1,10 +1,13 @@
 package com.company.view;
 
 import java.util.Scanner;
+import com.company.manager.InscribirEquipo;
+
 
 public class MenuEquipo {
     void show() {
         Scanner sc = new Scanner(System.in);
+        InscribirEquipo inscribirEquipo = new InscribirEquipo();
 
         System.out.println("1. Equipo");
         System.out.println("    1. Inscribir");
@@ -16,7 +19,7 @@ public class MenuEquipo {
         int opcion = sc.nextInt();
         switch (opcion) {
             case 1:
-                System.out.println("holaequip1");
+                inscribirEquipo
                 break;
             case 2:
                 System.out.println("holae2");
