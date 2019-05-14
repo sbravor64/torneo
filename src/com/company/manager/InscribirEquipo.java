@@ -12,7 +12,7 @@ public class InscribirEquipo {
     Files file = new Files();
     Scanner teclado = new Scanner(System.in);
 
-    void inscribir() {
+    public void inscribir() {
         String nombre=teclado.nextLine();
         String ciudad=teclado.nextLine();
         String  siglas=teclado.nextLine();
