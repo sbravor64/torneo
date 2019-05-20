@@ -24,7 +24,7 @@ public class MenuParticipantes {
         int opcion = sc.nextInt();
         switch (opcion) {
             case 1:
-                inscribir.inscribirParticipantes("participantes");
+                inscribir.inscribirParticipantes();
                 break;
             case 2:
                 modificar.modificar();
