@@ -25,14 +25,12 @@ public class Inscribir {
 
     public void inscribirParticipantes(String ruta) throws IOException {
         ruta="participantes";
-        String id=teclado.nextLine();
         String nombre=teclado.nextLine();
         String cognoms=teclado.nextLine();
+        int id = getLastId()+1;
 
-        FileWriter fw=new FileWriter(ruta, true);
-        BufferedWriter bw = new BufferedWriter(fw);
-        bw.write(id + files.SEPARATOR + nombre + files.SEPARATOR + cognoms);
-        bw.newLine();
+        BufferedWriter bw = new BufferedWriter(new FileWriter(ruta, true));
+        bw.write(id + files.SEPARATOR + nombre + files.SEPARATOR + cognoms + "\n");
         bw.close();
 
     }
