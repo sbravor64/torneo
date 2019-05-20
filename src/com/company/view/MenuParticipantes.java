@@ -27,13 +27,13 @@ public class MenuParticipantes {
                 inscribir.inscribirParticipantes();
                 break;
             case 2:
-                modificar.modificar();
+                modificar.modificarParticipantes();
                 break;
             case 3:
-                borrar.borrar();
+                borrar.borrarParticipantes();
                 break;
             case 4:
-                listar.listar();
+                listar.listarParticipantes();
                 break;
             case 5:
                 break;

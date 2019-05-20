@@ -16,4 +16,7 @@ public class Listar {
 
     public void listarEquipo() {
     }
+
+    public void listarParticipantes() {
+    }
 }

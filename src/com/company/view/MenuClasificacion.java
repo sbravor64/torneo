@@ -1,6 +1,5 @@
 package com.company.view;
 
-import java.io.IOException;
 import java.util.Scanner;
 import com.company.manager.*;
 

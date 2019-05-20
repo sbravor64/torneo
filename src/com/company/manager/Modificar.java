@@ -51,4 +51,7 @@ public class Modificar {
         tmpFile.renameTo(file);
 
     }
+
+    public void modificarParticipantes() {
+    }
 }
