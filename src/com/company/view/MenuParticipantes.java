@@ -14,7 +14,7 @@ public class MenuParticipantes {
         Listar listar = new Listar();
 
 
-        System.out.println("1. Participantes");
+        System.out.println("2. Participantes");
         System.out.println("    1. Inscribir");
         System.out.println("    2. Modificar");
         System.out.println("    3. Borrar");

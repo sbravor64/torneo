@@ -26,13 +26,13 @@ public class MenuEquipo {
                 inscribir.inscribirEquipo();
                 break;
             case 2:
-                modificar.modificar();
+                modificar.modificarEquipo();
                 break;
             case 3:
-                borrar.borrar();
+                borrar.borrarEquipo();
                 break;
             case 4:
-                listar.listar();
+                listar.listarEquipo();
                 break;
             case 5:
                 break;

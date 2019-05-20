@@ -13,4 +13,7 @@ public class Modificar {
     public void modificar() {
 
     }
+
+    public void modificarEquipo() {
+    }
 }

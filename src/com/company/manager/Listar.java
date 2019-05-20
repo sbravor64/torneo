@@ -13,4 +13,7 @@ public class Listar {
     public void listar() {
 
     }
+
+    public void listarEquipo() {
+    }
 }

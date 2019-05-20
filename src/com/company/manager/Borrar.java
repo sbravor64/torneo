@@ -13,4 +13,7 @@ public class Borrar {
     public void borrar() {
 
     }
+
+    public void borrarEquipo() {
+    }
 }

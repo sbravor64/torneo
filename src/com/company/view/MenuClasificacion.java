@@ -1,10 +1,13 @@
 package com.company.view;
 
+import java.io.IOException;
 import java.util.Scanner;
+import com.company.manager.*;
 
 public class MenuClasificacion {
     void show() {
         Scanner sc = new Scanner(System.in);
+        Clasificar clasificar = new Clasificar();
 
         System.out.println("4. Clasificacion");
         System.out.println("    1. Por equipos");
@@ -14,10 +17,10 @@ public class MenuClasificacion {
         int opcion = sc.nextInt();
         switch (opcion) {
             case 1:
-                System.out.println("holaequipo1");
+                clasificar.porEquipos();
                 break;
             case 2:
-                System.out.println("holae2");
+                clasificar.porParticipantes();
                 break;
             case 3:
                 break;
