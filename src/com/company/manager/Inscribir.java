@@ -10,7 +10,7 @@ public class Inscribir {
     Scanner teclado = new Scanner(System.in);
 
     public void inscribirEquipo() throws IOException {
-        files.ruta="equipo";
+        files.ruta="Equipos";
         String nombre=teclado.nextLine();
         String ciudad=teclado.nextLine();
         int id = getLastId()+1;
@@ -23,7 +23,7 @@ public class Inscribir {
     }
 
     public void inscribirParticipantes() throws IOException {
-        files.ruta="participantes";
+        files.ruta="Participantes";
         String nombre=teclado.nextLine();
         String cognoms=teclado.nextLine();
         int id = getLastId()+1;

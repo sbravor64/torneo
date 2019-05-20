@@ -9,7 +9,6 @@ public class MenuPrincipal {
 
     public void show() throws IOException {
         Scanner sc = new Scanner(System.in);
-        Files files = new Files();
         MenuEquipo menuEquipo = new MenuEquipo();
         MenuParticipantes menuParticipantes = new MenuParticipantes();
         MenuResultado menuResultado = new MenuResultado();

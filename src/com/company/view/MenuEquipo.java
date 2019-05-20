@@ -3,6 +3,7 @@ package com.company.view;
 import java.io.IOException;
 import java.util.Scanner;
 import com.company.manager.*;
+import com.company.model.Files;
 
 public class MenuEquipo {
     void show() throws IOException {
