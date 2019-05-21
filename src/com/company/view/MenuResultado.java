@@ -1,10 +1,12 @@
 package com.company.view;
 
 import com.company.manager.*;
+
+import java.io.IOException;
 import java.util.Scanner;
 
 public class MenuResultado {
-    void show() {
+    void show() throws IOException {
         Scanner sc = new Scanner(System.in);
         Introducir introducir = new Introducir();
         System.out.println("3. Resultado");
