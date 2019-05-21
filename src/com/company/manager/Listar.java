@@ -46,32 +46,41 @@ public class Listar {
 
     }
 
-    public void listarParticipantes() throws IOException {
+    public Participante[] listarParticipantes() throws IOException {
         files.ruta="Participantes";
 
         File file = new File(files.ruta);
 
+        // int numParticipantes = getNumPartic()
+        Participante[] participantes = new Participante[20000];
+
         BufferedReader inputStream = new BufferedReader(new FileReader(file));
 
-        System.out.print("Dime el ID del equipo que quieres mostrar: ");
-        int idMostrar=teclado.nextInt();
-
         String line;
+        int i=0;
         while((line = inputStream.readLine()) != null){
             String[] values = line.split(files.SEPARATOR);
 
-            if(Integer.valueOf(values[0]) == idMostrar){
+
                 participante.id=Integer.valueOf(values[0]);
                 participante.nombre= values[1];
                 participante.apellidos=values[2];
                 participante.ciudad=values[3];
 
-                System.out.println("NOMBRE: " + participante.nombre);
-                System.out.println("APELLIDOS: " + participante.apellidos);
-                System.out.println("CIUDAD: " + participante.ciudad);
-            }
+                participantes[i] = participante;
+                i++;
+
+//                System.out.println("NOMBRE: " + participante.nombre);
+//                System.out.println("APELLIDOS: " + participante.apellidos);
+//                System.out.println("CIUDAD: " + participante.ciudad);
+
         }
 
         inputStream.close();
+
+        return participantes;
     }
+
+
+    // int getNumPartic
 }

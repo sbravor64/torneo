@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import com.company.manager.*;
+import com.company.model.Participante;
 
 public class MenuParticipantes {
     void show() throws IOException {
@@ -33,7 +34,11 @@ public class MenuParticipantes {
                 borrar.borrarParticipantes();
                 break;
             case 4:
-                listar.listarParticipantes();
+                Participante[] participantes = listar.listarParticipantes();
+
+                for (int i = 0; i < participantes.length; i++) {
+                    System.out.println(participantes[i].nombre);
+                }
                 break;
             case 5:
                 break;
