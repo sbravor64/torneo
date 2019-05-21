@@ -21,7 +21,6 @@ public class MenuResultado {
             case 2:
                 break;
         }
-        if (opcion != 2) {show();}
 
     }
 }

@@ -39,7 +39,6 @@ public class MenuPrincipal {
             case 5:
                 break;
         }
-        if (opcion != 5) {show();}
 
     }
 }

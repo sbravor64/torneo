@@ -24,7 +24,6 @@ public class MenuClasificacion {
             case 3:
                 break;
         }
-        if (opcion != 3) {show();}
 
     }
 }
