@@ -39,5 +39,7 @@ public class MenuEquipo {
             case 5:
                 break;
         }
+        if (opcion != 5) {show();}
+
     }
 }
