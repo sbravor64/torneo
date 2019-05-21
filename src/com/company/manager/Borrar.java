@@ -10,23 +10,30 @@ public class Borrar {
     Scanner teclado = new Scanner(System.in);
 
     public void borrarEquipo() throws IOException {
-        files.ruta="equipo";
 
-        int id = teclado.nextInt();
+        files.ruta="Equipos";
+        File file = new File(files.ruta);
+        File tmpFile = new File(files.ruta + "tmp");
 
-
-        BufferedWriter bw = new BufferedWriter(new FileWriter(files.ruta, true));
-        PrintWriter pw = new PrintWriter(new FileWriter(files.ruta, true));
-        String line = null;
-        if (!line.trim().equals(id)) {
+        BufferedReader inputStream = new BufferedReader(new FileReader(file));
+        BufferedWriter outputStream = new BufferedWriter(new FileWriter(tmpFile));
 
 
+        System.out.println("ID del equipo que quieres borrar: ");
+        int idModificar=teclado.nextInt();
 
-            pw.println(line);
+        String line;
+        while((line = inputStream.readLine()) != null){
+            String[] values = line.split(files.SEPARATOR);
 
-            pw.flush();
-        }        bw.close();
-    }
+            if(Integer.valueOf(values[0]) != idModificar){
+                outputStream.write(line + "\n");
+            }
+        }
+
+        outputStream.close();
+        inputStream.close();
+        tmpFile.renameTo(file);    }
 
     public void borrarParticipantes() {
     }
