@@ -1,35 +1,42 @@
 package com.company.manager;
 
+import com.company.model.Equipo;
 import com.company.model.Files;
+import com.company.model.Participante;
 
 import java.io.*;
 import java.util.Scanner;
 
 public class Inscribir {
     Files files = new Files();
+    Equipo equipo = new Equipo();
+    Participante participante = new Participante();
     Scanner teclado = new Scanner(System.in);
 
     public void inscribirEquipo() throws IOException {
         files.ruta="Equipos";
-        String nombre=teclado.nextLine();
-        String ciudad=teclado.nextLine();
-        int id = getLastId()+1;
+        equipo.nombre =teclado.nextLine();
+        equipo.cognoms=teclado.nextLine();
+        equipo.ciudad=teclado.nextLine();
+        equipo.siglas=teclado.nextLine();
+        equipo.id = getLastId()+1;
 
 
         BufferedWriter bw = new BufferedWriter(new FileWriter(files.ruta, true));
-        bw.write(id + files.SEPARATOR + nombre + files.SEPARATOR + ciudad + "\n");
+        bw.write(equipo.id + files.SEPARATOR + equipo.nombre + files.SEPARATOR + equipo.cognoms + files.SEPARATOR + equipo.ciudad + files.SEPARATOR + equipo.siglas + "\n");
         bw.close();
 
     }
 
     public void inscribirParticipantes() throws IOException {
         files.ruta="Participantes";
-        String nombre=teclado.nextLine();
-        String cognoms=teclado.nextLine();
-        int id = getLastId()+1;
+        participante.nombre=teclado.nextLine();
+        participante.apellidos=teclado.nextLine();
+        participante.ciudad=teclado.nextLine();
+        participante.id = getLastId()+1;
 
         BufferedWriter bw = new BufferedWriter(new FileWriter(files.ruta, true));
-        bw.write(id + files.SEPARATOR + nombre + files.SEPARATOR + cognoms + "\n");
+        bw.write(participante.id + files.SEPARATOR + participante.nombre + files.SEPARATOR + participante.apellidos + files.SEPARATOR + participante.ciudad + "\n");
         bw.close();
 
     }
