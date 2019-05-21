@@ -19,7 +19,7 @@ public class Borrar {
         BufferedWriter outputStream = new BufferedWriter(new FileWriter(tmpFile));
 
 
-        System.out.println("ID del equipo que quieres borrar: ");
+        System.out.print("Dime el ID del equipo que quieres borrar: ");
         int idModificar=teclado.nextInt();
 
         String line;
@@ -28,30 +28,41 @@ public class Borrar {
 
             if(Integer.valueOf(values[0]) != idModificar){
                 outputStream.write(line + "\n");
+                System.out.print("El equipo ha sido borrado");
             }
         }
 
         outputStream.close();
         inputStream.close();
-        tmpFile.renameTo(file);    }
 
-    public void borrarParticipantes() {
+        tmpFile.renameTo(file);
     }
 
-    int getLastId() throws IOException {
-        int id=0;
-        BufferedReader inputStream = new BufferedReader(new FileReader(files.ruta));
+    public void borrarParticipantes() throws IOException {
+        files.ruta="Participantes";
+        File file = new File(files.ruta);
+        File tmpFile = new File(files.ruta + "tmp");
 
+        BufferedReader inputStream = new BufferedReader(new FileReader(file));
+        BufferedWriter outputStream = new BufferedWriter(new FileWriter(tmpFile));
+
+
+        System.out.print("Dime el ID del participante que quieres borrar: ");
+        int idModificar=teclado.nextInt();
 
         String line;
         while((line = inputStream.readLine()) != null){
             String[] values = line.split(files.SEPARATOR);
-            id = Integer.valueOf(values[0]);
+
+            if(Integer.valueOf(values[0]) != idModificar){
+                outputStream.write(line + "\n");
+                System.out.print("El participante ha sido borrado");
+            }
         }
 
+        outputStream.close();
         inputStream.close();
 
-        return id;
-
+        tmpFile.renameTo(file);
     }
 }

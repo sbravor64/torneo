@@ -25,7 +25,7 @@ public class Modificar {
         BufferedWriter outputStream = new BufferedWriter(new FileWriter(tmpFile));
 
 
-        System.out.println("Dime el ID del equipo que quieres modificar");
+        System.out.print("Dime el ID del equipo que quieres modificar: ");
         int idModificar=teclado.nextInt();
 
         String line;
@@ -67,7 +67,7 @@ public class Modificar {
         BufferedWriter outputStream = new BufferedWriter(new FileWriter(tmpFile));
 
 
-        System.out.println("Dime el ID del equipo que quieres modificar");
+        System.out.print("Dime el ID del equipo que quieres modificar: ");
         int idModificar=teclado.nextInt();
 
         String line;
