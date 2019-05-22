@@ -57,13 +57,12 @@ public class MenuParticipantes {
                 borrar.borrarParticipantes(idBorrar);
                 break;
             case 4:
-                Participante[] participantes = listar.listarParticipantes();
+                String[][] participantes = listar.listarParticipantes();
 
                 for (int i = 0; i < participantes.length; i++) {
-                    System.out.print(participantes[i].id + " ");
-                    System.out.print(participantes[i].nombre + " ");
-                    System.out.print(participantes[i].apellidos+ " ");
-                    System.out.print(participantes[i].ciudad+ " ");
+                    for (int j = 0; j <participantes[i].length ; j++) {
+                        System.out.print(participantes[i][j] + " ");
+                    }
                     System.out.println();
                 }
 

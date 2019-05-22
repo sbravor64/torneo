@@ -46,12 +46,13 @@ public class Listar {
 
     }
 
-    public Participante[] listarParticipantes() throws IOException {
+    public String[][] listarParticipantes() throws IOException {
         files.ruta="Participantes";
         File file = new File(files.ruta);
 
         int numParticipantes = getNumPartic();
-        Participante[] participantes = new Participante[numParticipantes];
+        int numcolumnas = getNumColumn();
+        String[][] participantes = new String[numParticipantes][numcolumnas];
 
         BufferedReader inputStream = new BufferedReader(new FileReader(file));
 
@@ -60,13 +61,11 @@ public class Listar {
         while((line = inputStream.readLine()) != null){
             String[] values = line.split(files.SEPARATOR);
 
-            participante.id=Integer.valueOf(values[0]);
-            participante.nombre= values[1];
-            participante.apellidos=values[2];
-            participante.ciudad=values[3];
+            participantes[i][0]=values[0];
+            participantes[i][1]=values[1];
+            participantes[i][2]=values[2];
+            participantes[i][3]=values[3];
 
-            participantes[i] = participante;
-            i++;
         }
 
         inputStream.close();
@@ -78,15 +77,26 @@ public class Listar {
     int getNumPartic() throws IOException {
         int num=0;
         BufferedReader inputStream = new BufferedReader(new FileReader(files.ruta));
-
         String line;
         while((line = inputStream.readLine()) != null){
             String[] values = line.split(files.SEPARATOR);
             num++;
         }
-
         inputStream.close();
+        return num;
+    }
 
+    int getNumColumn() throws IOException {
+        int num=0;
+        BufferedReader inputStream = new BufferedReader(new FileReader(files.ruta));
+        String line;
+        if((line = inputStream.readLine()) != null){
+            String[] values = line.split(files.SEPARATOR);
+            for (int i = 0; i <values.length ; i++) {
+                num++;
+            }
+        }
+        inputStream.close();
         return num;
     }
 }
