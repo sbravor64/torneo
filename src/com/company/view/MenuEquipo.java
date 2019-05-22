@@ -4,11 +4,13 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 import com.company.manager.*;
+import com.company.model.Equipo;
 import com.company.model.Files;
 
 public class MenuEquipo {
     void show() throws IOException {
-        Scanner sc = new Scanner(System.in);
+        Scanner teclado = new Scanner(System.in);
+        Equipo equipo = new Equipo();
         Inscribir inscribir = new Inscribir();
         Modificar modificar = new Modificar();
         Borrar borrar = new Borrar();
@@ -22,16 +24,47 @@ public class MenuEquipo {
         System.out.println("    4. Listar");
         System.out.println("    5. Salir");
 
-        int opcion = sc.nextInt();
+        int opcion = teclado.nextInt();
+        teclado.nextLine();
         switch (opcion) {
             case 1:
-                inscribir.inscribirEquipo();
+
+                System.out.print("NOMBRE: ");
+                String nombre=teclado.nextLine();
+                System.out.print("AÑO DE FUNDACIÓN: ");
+                String año=teclado.nextLine();
+                System.out.print("CIUDAD: ");
+                String ciudad=teclado.nextLine();
+                System.out.print("SIGLAS: ");
+                String siglas=teclado.nextLine();
+
+                inscribir.inscribirEquipo(nombre, año, ciudad, siglas);
+
                 break;
             case 2:
-                modificar.modificarEquipo();
+
+                System.out.print("Dime el ID del equipo que quieres modificar: ");
+                int idModificar=teclado.nextInt();
+                teclado.nextLine();
+
+                System.out.print("NOMBRE: ");
+                nombre=teclado.nextLine();
+                System.out.print("AÑO DE FUNDACIÓN: ");
+                año=teclado.nextLine();
+                System.out.print("CIUDAD: ");
+                ciudad=teclado.nextLine();
+                System.out.print("SIGLAS: ");
+                siglas=teclado.nextLine();
+
+                modificar.modificarEquipo(idModificar,nombre, año, ciudad, siglas);
+
                 break;
             case 3:
-                borrar.borrarEquipo();
+
+                System.out.print("Dime el ID del equipo que quieres borrar: ");
+                int idBorrar=teclado.nextInt();
+                borrar.borrarEquipo(idBorrar);
+
                 break;
             case 4:
                 listar.listarEquipo();

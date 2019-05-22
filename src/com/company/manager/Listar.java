@@ -48,11 +48,10 @@ public class Listar {
 
     public Participante[] listarParticipantes() throws IOException {
         files.ruta="Participantes";
-
         File file = new File(files.ruta);
 
-        // int numParticipantes = getNumPartic()
-        Participante[] participantes = new Participante[20000];
+        int numParticipantes = getNumPartic();
+        Participante[] participantes = new Participante[numParticipantes];
 
         BufferedReader inputStream = new BufferedReader(new FileReader(file));
 
@@ -61,19 +60,13 @@ public class Listar {
         while((line = inputStream.readLine()) != null){
             String[] values = line.split(files.SEPARATOR);
 
+            participante.id=Integer.valueOf(values[0]);
+            participante.nombre= values[1];
+            participante.apellidos=values[2];
+            participante.ciudad=values[3];
 
-                participante.id=Integer.valueOf(values[0]);
-                participante.nombre= values[1];
-                participante.apellidos=values[2];
-                participante.ciudad=values[3];
-
-                participantes[i] = participante;
-                i++;
-
-//                System.out.println("NOMBRE: " + participante.nombre);
-//                System.out.println("APELLIDOS: " + participante.apellidos);
-//                System.out.println("CIUDAD: " + participante.ciudad);
-
+            participantes[i] = participante;
+            i++;
         }
 
         inputStream.close();
@@ -82,5 +75,18 @@ public class Listar {
     }
 
 
-    // int getNumPartic
+    int getNumPartic() throws IOException {
+        int num=0;
+        BufferedReader inputStream = new BufferedReader(new FileReader(files.ruta));
+
+        String line;
+        while((line = inputStream.readLine()) != null){
+            String[] values = line.split(files.SEPARATOR);
+            num++;
+        }
+
+        inputStream.close();
+
+        return num;
+    }
 }

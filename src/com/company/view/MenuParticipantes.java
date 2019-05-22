@@ -23,22 +23,50 @@ public class MenuParticipantes {
         System.out.println("    5. Salir");
 
         int opcion = sc.nextInt();
+        sc.nextLine();
         switch (opcion) {
             case 1:
-                inscribir.inscribirParticipantes();
+                System.out.print("NOMBRE: ");
+                String nombre=sc.nextLine();
+                System.out.print("APELLIDOS: ");
+                String apellidos=sc.nextLine();
+                System.out.print("CIUDAD: ");
+                String ciudad=sc.nextLine();
+
+                inscribir.inscribirParticipantes(nombre,apellidos,ciudad);
                 break;
             case 2:
-                modificar.modificarParticipantes();
+
+                System.out.print("Dime el ID del participante que quieres modificar: ");
+                int idModificar=sc.nextInt();
+                sc.nextLine();
+                System.out.print("NOMBRE: ");
+                nombre=sc.nextLine();
+                System.out.print("APELLIDOS: ");
+                apellidos=sc.nextLine();
+                System.out.print("CIUDAD: ");
+                ciudad=sc.nextLine();
+
+                modificar.modificarParticipantes(idModificar,nombre,apellidos,ciudad);
                 break;
             case 3:
-                borrar.borrarParticipantes();
+
+                System.out.print("Dime el ID del participante que quieres borrar: ");
+                int idBorrar=sc.nextInt();
+
+                borrar.borrarParticipantes(idBorrar);
                 break;
             case 4:
                 Participante[] participantes = listar.listarParticipantes();
 
                 for (int i = 0; i < participantes.length; i++) {
-                    System.out.println(participantes[i].nombre);
+                    System.out.print(participantes[i].id + " ");
+                    System.out.print(participantes[i].nombre + " ");
+                    System.out.print(participantes[i].apellidos+ " ");
+                    System.out.print(participantes[i].ciudad+ " ");
+                    System.out.println();
                 }
+
                 break;
             case 5:
                 break;
