@@ -16,7 +16,7 @@ public class MenuClasificacion {
         int opcion = sc.nextInt();
         switch (opcion) {
             case 1:
-                clasificar.porEquipos();
+                //clasificar.porEquipos();
                 break;
             case 2:
                 clasificar.porParticipantes();

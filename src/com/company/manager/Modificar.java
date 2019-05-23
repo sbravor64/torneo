@@ -44,7 +44,7 @@ public class Modificar {
 
     }
 
-    public void modificarParticipantes(int idModificar, String nombre, String apellidos, String ciudad) throws IOException {
+    public void modificarParticipantes(int idModificar, String nombre, String apellidos, String ciudad, int idEquipo) throws IOException {
         files.ruta="Participantes";
 
         File file = new File(files.ruta);
@@ -59,7 +59,7 @@ public class Modificar {
 
             if(Integer.valueOf(values[0]) == idModificar){
                 int id = Integer.valueOf(values[0]);
-                outputStream.write(id + files.SEPARATOR + nombre + files.SEPARATOR + apellidos + files.SEPARATOR + ciudad + "\n");
+                outputStream.write(id + files.SEPARATOR + nombre + files.SEPARATOR + apellidos + files.SEPARATOR + ciudad + files.SEPARATOR + idEquipo + "\n");
             } else {
                 outputStream.write(line + "\n");
             }

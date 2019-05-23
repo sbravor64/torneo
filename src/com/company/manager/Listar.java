@@ -13,36 +13,33 @@ public class Listar {
     Participante participante = new Participante();
     Scanner teclado = new Scanner(System.in);
 
-    public void listarEquipo() throws IOException {
+    public String[][] listarEquipo() throws IOException {
 
         files.ruta="Equipos";
 
         File file = new File(files.ruta);
 
+        int numEquipos = getNumPartic();
+        int numcolumnas = getNumColumn();
+        String[][] equipos = new String[numEquipos][numcolumnas];
+
         BufferedReader inputStream = new BufferedReader(new FileReader(file));
 
-        System.out.println("Dime el ID del equipo que quieres mostrar");
-        int idMostrar=teclado.nextInt();
-
         String line;
+        int j=0;
         while((line = inputStream.readLine()) != null){
             String[] values = line.split(files.SEPARATOR);
 
-            if(Integer.valueOf(values[0]) == idMostrar){
-                equipo.id=Integer.valueOf(values[0]);
-                equipo.nombre= values[1];
-                equipo.año=values[2];
-                equipo.ciudad=values[3];
-                equipo.siglas=values[4];
-
-                System.out.println("NOMBRE: " + equipo.nombre);
-                System.out.println("AÑO DE FUNDACIÓN: " + equipo.año);
-                System.out.println("CIUDAD: " + equipo.ciudad);
-                System.out.println("SIGLAS: " + equipo.siglas);
+            for (int k = 0; k <equipos[j].length ; k++) {
+                equipos[j][k]=values[k];
             }
+            j++;
+
         }
 
         inputStream.close();
+
+        return equipos;
 
     }
 
@@ -57,14 +54,14 @@ public class Listar {
         BufferedReader inputStream = new BufferedReader(new FileReader(file));
 
         String line;
-        int i=0;
+        int j=0;
         while((line = inputStream.readLine()) != null){
             String[] values = line.split(files.SEPARATOR);
 
-            participantes[i][0]=values[0];
-            participantes[i][1]=values[1];
-            participantes[i][2]=values[2];
-            participantes[i][3]=values[3];
+            for (int k = 0; k <participantes[j].length ; k++) {
+                participantes[j][k]=values[k];
+            }
+            j++;
 
         }
 

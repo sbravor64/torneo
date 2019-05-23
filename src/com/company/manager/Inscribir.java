@@ -23,13 +23,13 @@ public class Inscribir {
         bw.close();
     }
 
-    public void inscribirParticipantes(String nombre, String apellidos, String ciudad) throws IOException {
+    public void inscribirParticipantes(String nombre, String apellidos, String ciudad, int idEquipo) throws IOException {
         files.ruta="Participantes";
 
         int id = getLastId()+1;
 
         BufferedWriter bw = new BufferedWriter(new FileWriter(files.ruta, true));
-        bw.write(id + files.SEPARATOR + nombre + files.SEPARATOR + apellidos + files.SEPARATOR + ciudad + "\n");
+        bw.write(id + files.SEPARATOR + nombre + files.SEPARATOR + apellidos + files.SEPARATOR + ciudad + files.SEPARATOR + idEquipo + "\n");
         bw.close();
 
     }

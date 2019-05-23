@@ -16,62 +16,72 @@ public class MenuEquipo {
         Borrar borrar = new Borrar();
         Listar listar = new Listar();
 
+        while (true) {
+            System.out.println("1. Equipo");
+            System.out.println("    1. Inscribir");
+            System.out.println("    2. Modificar");
+            System.out.println("    3. Borrar");
+            System.out.println("    4. Listar");
+            System.out.println("    5. Salir");
 
-        System.out.println("1. Equipo");
-        System.out.println("    1. Inscribir");
-        System.out.println("    2. Modificar");
-        System.out.println("    3. Borrar");
-        System.out.println("    4. Listar");
-        System.out.println("    5. Salir");
+            int opcion = teclado.nextInt();
+            teclado.nextLine();
+            switch (opcion) {
+                case 1:
 
-        int opcion = teclado.nextInt();
-        teclado.nextLine();
-        switch (opcion) {
-            case 1:
+                    System.out.print("NOMBRE: ");
+                    String nombre = teclado.nextLine();
+                    System.out.print("AÑO DE FUNDACIÓN: ");
+                    String año = teclado.nextLine();
+                    System.out.print("CIUDAD: ");
+                    String ciudad = teclado.nextLine();
+                    System.out.print("SIGLAS: ");
+                    String siglas = teclado.nextLine();
 
-                System.out.print("NOMBRE: ");
-                String nombre=teclado.nextLine();
-                System.out.print("AÑO DE FUNDACIÓN: ");
-                String año=teclado.nextLine();
-                System.out.print("CIUDAD: ");
-                String ciudad=teclado.nextLine();
-                System.out.print("SIGLAS: ");
-                String siglas=teclado.nextLine();
+                    inscribir.inscribirEquipo(nombre, año, ciudad, siglas);
 
-                inscribir.inscribirEquipo(nombre, año, ciudad, siglas);
+                    break;
+                case 2:
 
-                break;
-            case 2:
+                    System.out.print("Dime el ID del equipo que quieres modificar: ");
+                    int idModificar = teclado.nextInt();
+                    teclado.nextLine();
 
-                System.out.print("Dime el ID del equipo que quieres modificar: ");
-                int idModificar=teclado.nextInt();
-                teclado.nextLine();
+                    System.out.print("NOMBRE: ");
+                    nombre = teclado.nextLine();
+                    System.out.print("AÑO DE FUNDACIÓN: ");
+                    año = teclado.nextLine();
+                    System.out.print("CIUDAD: ");
+                    ciudad = teclado.nextLine();
+                    System.out.print("SIGLAS: ");
+                    siglas = teclado.nextLine();
 
-                System.out.print("NOMBRE: ");
-                nombre=teclado.nextLine();
-                System.out.print("AÑO DE FUNDACIÓN: ");
-                año=teclado.nextLine();
-                System.out.print("CIUDAD: ");
-                ciudad=teclado.nextLine();
-                System.out.print("SIGLAS: ");
-                siglas=teclado.nextLine();
+                    modificar.modificarEquipo(idModificar, nombre, año, ciudad, siglas);
 
-                modificar.modificarEquipo(idModificar,nombre, año, ciudad, siglas);
+                    break;
+                case 3:
 
-                break;
-            case 3:
+                    System.out.print("Dime el ID del equipo que quieres borrar: ");
+                    int idBorrar = teclado.nextInt();
+                    borrar.borrarEquipo(idBorrar);
 
-                System.out.print("Dime el ID del equipo que quieres borrar: ");
-                int idBorrar=teclado.nextInt();
-                borrar.borrarEquipo(idBorrar);
+                    break;
+                case 4:
+                    String[][] equipos = listar.listarEquipo();
 
-                break;
-            case 4:
-                listar.listarEquipo();
-                break;
-            case 5:
-                break;
+                    System.out.println("ID | NOMBRE | AÑO | CIUDAD | SIGLAS");
+                    for (int i = 0; i < equipos.length; i++) {
+                        for (int j = 0; j < equipos[i].length; j++) {
+                            System.out.print(equipos[i][j] + " | ");
+                        }
+                        System.out.println();
+                    }
+                    System.out.println();
+                    break;
+                case 5:
+                    return;
+            }
+
         }
-
     }
 }
