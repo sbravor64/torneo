@@ -1,5 +1,6 @@
 package com.company.view;
 
+import java.io.IOException;
 import java.util.Scanner;
 import com.company.manager.*;
 
@@ -16,7 +17,7 @@ public class MenuClasificacion {
         int opcion = sc.nextInt();
         switch (opcion) {
             case 1:
-                //clasificar.porEquipos();
+                clasificar.porEquipos();
                 break;
             case 2:
                 clasificar.porParticipantes();

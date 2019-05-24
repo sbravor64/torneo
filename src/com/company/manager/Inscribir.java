@@ -13,14 +13,13 @@ public class Inscribir {
     Participante participante = new Participante();
     Scanner teclado = new Scanner(System.in);
 
-    public void inscribirEquipo(String nombre, String año, String ciudad, String siglas, int puntos) throws IOException {
+    public void inscribirEquipo(String nombre, String año, String ciudad, String siglas) throws IOException {
         files.ruta="Equipos";
 
         int id=getLastId()+1;
-        puntos=0;
 
         BufferedWriter bw = new BufferedWriter(new FileWriter(files.ruta, true));
-        bw.write(id + files.SEPARATOR + nombre + files.SEPARATOR + año + files.SEPARATOR + ciudad + files.SEPARATOR + siglas + files.SEPARATOR + puntos + "\n");
+        bw.write(id + files.SEPARATOR + nombre + files.SEPARATOR + año + files.SEPARATOR + ciudad + files.SEPARATOR + siglas + "\n");
         bw.close();
     }
 

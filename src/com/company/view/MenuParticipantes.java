@@ -32,8 +32,22 @@ public class MenuParticipantes {
                     String apellidos = sc.nextLine();
                     System.out.print("CIUDAD: ");
                     String ciudad = sc.nextLine();
+
                     System.out.print("ID del Equipo: ");
+                    int[] idEquipos = listar.listarIdEquipo();
                     int idEquipo = sc.nextInt();
+
+                    int cont=0;
+                    while(cont==0){
+                        for (int i = 0; i <idEquipos.length ; i++) {
+                            if(idEquipo==idEquipos[i]){ cont++; }
+                        }
+                        if(cont==0){
+                            System.out.println("No existe un equipo con ese ID");
+                            System.out.print("ID del Equipo: ");
+                            idEquipo=sc.nextInt();
+                        }
+                    }
 
                     inscribir.inscribirParticipantes(nombre, apellidos, ciudad, idEquipo);
                     break;

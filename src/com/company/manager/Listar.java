@@ -70,6 +70,31 @@ public class Listar {
         return participantes;
     }
 
+    public int[] listarIdEquipo() throws IOException {
+
+        files.ruta="Equipos";
+
+        File file = new File(files.ruta);
+
+        int numEquipos = getNumPartic();
+        int[] id = new int[numEquipos];
+
+        BufferedReader inputStream = new BufferedReader(new FileReader(file));
+
+        int i=0;
+        String line;
+        while((line = inputStream.readLine()) != null){
+            String[] values = line.split(files.SEPARATOR);
+
+            id[i]=Integer.parseInt(values[0]);
+            i++;
+        }
+
+        inputStream.close();
+
+        return id;
+
+    }
 
     int getNumPartic() throws IOException {
         int num=0;

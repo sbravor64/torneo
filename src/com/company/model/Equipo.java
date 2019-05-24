@@ -8,4 +8,5 @@ public class Equipo {
     public String año;
     public String siglas;
     public String ciudad;
+    public int puntos;
 }
