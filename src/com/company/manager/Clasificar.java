@@ -43,6 +43,13 @@ public class Clasificar {
         String[][] equipos = listar.listarEquipo();
         String[][] participantes = listar.listarParticipantes();
 
+        for (int j = 0; j <equipos[0].length ; j++) {
+            for (int k = 0; k <participantes[5].length ; k++) {
+                if(Integer.valueOf(String.valueOf(equipos[0][j])) == Integer.valueOf(String.valueOf(participantes[5][k]))){
+
+                }
+            }
+        }
 
     }
 

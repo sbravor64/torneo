@@ -37,8 +37,9 @@ public class MenuEquipo {
                     String ciudad = teclado.nextLine();
                     System.out.print("SIGLAS: ");
                     String siglas = teclado.nextLine();
+                    int puntos;
 
-                    inscribir.inscribirEquipo(nombre, año, ciudad, siglas);
+                    inscribir.inscribirEquipo(nombre, año, ciudad, siglas, puntos);
 
                     break;
                 case 2:
